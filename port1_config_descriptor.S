@@ -1,7 +1,7 @@
 // modified by Hermes to add /app_home/PS3_GAME /see readme.txt) and the shortcut to launch bluray from here
 // added syscall 8, perm mode, relocatable code....
 // added double bar skip ("//") in vsh_open
-// Rebug's payload (Rancid(o))
+// Rebug payload (Rancid(o))
 
 #define USB_MODULE
 #define SYS8_VERSION 0x100
@@ -934,10 +934,10 @@ syscall8:
 	PATCH_INST(0x5fB448, li %r3, 1)
 	PATCH_INST(0x5fB44C, blr)
 
-// Patch PSN suggested by Hermes and modified by Rancid(o) // With out this... PSN is off  
-//   	PATCH_BRANCH(0x, b, 0x) // 
-//      PATCH_INST(0x, li %r0, 0x82) // Device model (Debug)
-//      PATCH_INST(0x, li %r0, 0x9) // Motherboard type
+// Patch PSN suggested by Hermes and modified by Rancid(o) // With out this... PSN not work..  
+//   	PATCH_BRANCH(0x, b, 0x)  
+//      PATCH_INST(0x, li %r0, 0x82)
+//      PATCH_INST(0x, li %r0, 0x9) 
         .long 0
 
  memory_patch_table_2:

@@ -934,10 +934,10 @@ syscall8:
 	PATCH_INST(0x5fB448, li %r3, 1)
 	PATCH_INST(0x5fB44C, blr)
 
-// Patch PSN suggested by Hermes and modified by Rancid(o) // With out this... PSN not work..  
-//   	PATCH_BRANCH(0x, b, 0x)  
-//      PATCH_INST(0x, li %r0, 0x82)
-//      PATCH_INST(0x, li %r0, 0x9) 
+// Patch PSN suggested by Hermes and modified by Rancid(o)
+   	PATCH_BRANCH(0x478798, b, 0x47879C)  
+        PATCH_INST(0x47879C, li %r0, 0x82)
+        PATCH_INST(0x4787A4, li %r0, 0x9) 
         .long 0
 
  memory_patch_table_2:
